@@ -1,40 +1,23 @@
 package com.itchunyang.eventpost;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import com.itchunyang.eventpost.post.EventPostActivity;
 
-    public static final String TAG = "EventPost";
-    private Button btn01;
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btn01 = (Button) findViewById(R.id.btn01);
-        btn01.setOnClickListener(new BtnClickListener());
-        btn01.setOnTouchListener(new BtnOnTouchListener());
     }
 
-    class BtnClickListener implements View.OnClickListener{
-
-        @Override
-        public void onClick(View v) {
-            Log.i(TAG, "onClick: ");
-        }
+    public void eventPost(View view) {
+        startActivity(new Intent(this, EventPostActivity.class));
     }
 
-    class BtnOnTouchListener implements View.OnTouchListener{
 
-        @Override
-        public boolean onTouch(View v, MotionEvent event) {
-            Log.i(TAG, "onTouch: action="+event.getAction());
-            return false;
-        }
-    }
 }

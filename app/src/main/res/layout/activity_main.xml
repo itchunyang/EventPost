@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/btn01"
             android:textAllCaps="false"
-            android:text="event01"
+            android:onClick="eventPost"
+            android:text="事件基础"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
