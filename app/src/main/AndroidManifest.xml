@@ -15,7 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".post.EventPostActivity"></activity>
+        <activity android:name=".post.EventPostActivity" />
+        <activity android:name=".gesture.GestureDetectorActivity" />
+        <activity android:name=".pointer.MultiplePointerActivity"></activity>
     </application>
 
 </manifest>

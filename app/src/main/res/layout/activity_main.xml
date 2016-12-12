@@ -17,5 +17,19 @@
             android:text="事件基础"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+        <Button
+            android:textAllCaps="false"
+            android:onClick="gesture"
+            android:text="手势识别"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:textAllCaps="false"
+            android:onClick="multiplePointer"
+            android:text="多点触摸"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </LinearLayout>
