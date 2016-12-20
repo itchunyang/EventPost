@@ -58,8 +58,8 @@ public class MyLinearLayout extends LinearLayout {
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         Log.i(TAG, "dispatchTouchEvent: ");
-//        return super.dispatchTouchEvent(ev);
-        return false;
+        return super.dispatchTouchEvent(ev);
+//        return false;
     }
 
     @Override
@@ -71,7 +71,7 @@ public class MyLinearLayout extends LinearLayout {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Log.i(TAG, "onTouchEvent: ");
-        return super.onTouchEvent(event);//或者return false   事件回传给父组件
-//        return true; //消费事件不回传，自己消费掉
+//        return super.onTouchEvent(event);//或者return false   事件回传给父组件
+        return true; //消费事件不回传，自己消费掉
     }
 }
