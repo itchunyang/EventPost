@@ -26,22 +26,52 @@ public class MyLinearLayout extends LinearLayout {
         super(context, attrs, defStyleAttr);
     }
 
+    /**
+     *
+     * @return
+     * return true
+     *      [ACTION_DOWN]
+     *      Activity: dispatchTouchEvent
+     *      MyFrameLayout: dispatchTouchEvent
+     *      MyFrameLayout: onInterceptTouchEvent
+     *      MyLinearLayout: dispatchTouchEvent
+     *
+     *      [ACTION_UP]
+     *      Activity: dispatchTouchEvent
+     *      MyFrameLayout: dispatchTouchEvent
+     *      MyFrameLayout: onInterceptTouchEvent
+     *      MyLinearLayout: dispatchTouchEvent
+     *
+     *  return false
+     *      [ACTION_DOWN]
+     *      Activity: dispatchTouchEvent
+     *      MyFrameLayout: dispatchTouchEvent
+     *      MyFrameLayout: onInterceptTouchEvent
+     *      MyLinearLayout: dispatchTouchEvent
+     *      MyFrameLayout: onTouchEvent
+     *      Activity: onTouchEvent
+     *
+     *      [ACTION_UP]
+     *      Activity: dispatchTouchEvent
+     *      Activity: onTouchEvent
+     */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         Log.i(TAG, "dispatchTouchEvent: ");
-        return super.dispatchTouchEvent(ev);
+//        return super.dispatchTouchEvent(ev);
+        return false;
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         Log.i(TAG, "onInterceptTouchEvent: ");
-        return super.onInterceptTouchEvent(ev);
+        return super.onInterceptTouchEvent(ev);// = retrun false
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Log.i(TAG, "onTouchEvent: ");
-//        return super.onTouchEvent(event);
-        return true;
+        return super.onTouchEvent(event);//或者return false   事件回传给父组件
+//        return true; //消费事件不回传，自己消费掉
     }
 }
